@@ -1,0 +1,18 @@
+{
+  "name": "qrtest",
+  "description": "",
+  "main": "index.js",
+  "authors": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "milligram": "~1.1.0"
+  }
+}

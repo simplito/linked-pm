@@ -1,0 +1,262 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.icon-qrcode {
+  width: 0.7857138514518738em;
+}
+
+.icon-arrow-down {
+  width: 0.9285712018609047em;
+}
+
+.icon-eye {
+  width: 0.9999980051070452em;
+}
+
+.icon-eye-slash {
+  width: 1.000001983717084em;
+}
+
+.icon-clipboard {
+  width: 1.000001959502697em;
+}
+
+.icon-file-text-o {
+  width: 0.8571445867419243em;
+}
+
+.icon-mail-reply {
+  width: 1.0000029690563679em;
+}
+
+body{
+    background-color: #e6e8eb;
+    line-height: 1;
+}
+
+.container {
+    max-width: 90rem;
+}
+
+#input, #passField{
+    background-color: white;
+}
+
+input, button, textarea{
+    margin-bottom: 0px;
+}
+
+#passField{
+    margin-bottom: 20px;
+}
+
+#input{
+    margin-bottom: 12px;
+    resize: vertical;
+}
+
+#generate{
+    margin-bottom: 19px;
+    width: 100%;
+}
+
+#editorLinkButtons{
+    margin-top: 16px;
+}
+
+form{
+    margin-bottom: 0px;
+}
+
+#result img{
+    max-width: auto;
+}
+
+#result .left{
+    text-align: center;
+}
+
+#result .right{
+    text-align: center;
+}
+
+#result label{
+    text-align: left;
+}
+
+#qrcode{
+    display: none;
+}
+
+.hideablePassword a{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hideablePassword i.fa{
+    font-size: xx-large;
+}
+
+.hideablePassword .passwordholder{
+    display: inline-block;
+    width: calc(100% - 40px);
+}
+
+.hideablePassword .eyeholder{
+    text-align: center;
+    display: none;
+    position: relative;
+    top: 5px;
+    font-size: 24px;
+}
+
+.hideablePassword .eyeholder a{
+    position: relative;
+    top: 2px;
+}
+
+#mainField{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    resize: none;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+#output {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.navigation-title{
+    display: inline;
+    font-size: 1.6rem;
+    line-height: 5.2rem;
+    padding: 0;
+    text-decoration: none;
+}
+
+h1.title{
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+header .container{
+    position: relative;
+}
+
+#howIt{
+    position: absolute;
+    right: 2rem;
+    bottom: 20px;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 370px) {
+    a.navigation-title{
+        display: block;
+        height: 100%;
+    }
+    h1.title{
+        display: block;
+    }
+    #howIt{
+        display: block;
+        position: static;
+        margin-bottom: 11px;
+        margin-top: 11px;
+    }
+}
+
+.column.withEncryptBtn{
+    text-align: left;
+    line-height: 1;
+}
+
+@media (min-width: 40.0rem) {
+    #result img{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 710px) {
+    #editorLinkButtons{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #editorLinkButtons .column{
+        display: block;
+        flex: 1 1 0;
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.button-small {
+  font-size: .8rem;
+  height: 2.8rem;
+  line-height: 2.8rem;
+  padding: 0 1.5rem;
+}
+
+#pageDescription{
+    display: none;
+}
+
+#toClipboard{
+    margin-bottom: 20px;
+}
+
+#toClipboard, #download, #follow{
+    width: 100%;
+}
+
+
+.column.withInfo{
+    padding-top: 13px;
+}
+
+@media (max-width: 640px){
+    .column.withEncryptBtn, .column.withInfo{
+        flex: 1 !important;
+        max-width: 100% !important;
+    }
+    
+    .column.withInfo{
+        margin-bottom: 16px;
+        padding-top: 0px;
+    }
+    
+    #toClipboard, #download, #follow{
+        margin-bottom: 20px;
+    }
+}
+
+#canvas{
+    display: none;
+}
+
+/* reader */
+
+#reply, #newMessage{
+    width: 100%;
+}
+
+#reply{
+    margin-bottom: 20px;
+}
+
+#footer {
+	text-align:center;
+	font-size:80%;
+}

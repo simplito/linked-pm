@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- build:css -->
+    <link rel='stylesheet' href='../css/index.css'/>
+    <!-- endbuild -->
+    
+    <title>Linked.PM - Private Messages As Links</title>
+    
+    <meta name="description" content="Encrypt your private messages and turn them into clickable links">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#5bbad5">
+    
+</head>
+<body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+        <symbol id="icon-qrcode" viewBox="0 0 25 32">
+        <title>qrcode</title>
+        <path class="path1" d="M6.857 20.571v2.286h-2.286v-2.286h2.286zM6.857 6.857v2.286h-2.286v-2.286h2.286zM20.571 6.857v2.286h-2.286v-2.286h2.286zM2.286 25.125h6.857v-6.839h-6.857v6.839zM2.286 11.429h6.857v-6.857h-6.857v6.857zM16 11.429h6.857v-6.857h-6.857v6.857zM11.429 16v11.429h-11.429v-11.429h11.429zM20.571 25.143v2.286h-2.286v-2.286h2.286zM25.143 25.143v2.286h-2.286v-2.286h2.286zM25.143 16v6.857h-6.857v-2.286h-2.286v6.857h-2.286v-11.429h6.857v2.286h2.286v-2.286h2.286zM11.429 2.286v11.429h-11.429v-11.429h11.429zM25.143 2.286v11.429h-11.429v-11.429h11.429z"></path>
+        </symbol>
+        <symbol id="icon-arrow-down" viewBox="0 0 30 32">
+        <title>arrow-down</title>
+        <path class="path1" d="M28.768 14.857q0 0.946-0.661 1.607l-11.625 11.643q-0.696 0.661-1.625 0.661-0.946 0-1.607-0.661l-11.625-11.643q-0.679-0.643-0.679-1.607 0-0.946 0.679-1.625l1.321-1.339q0.696-0.661 1.625-0.661 0.946 0 1.607 0.661l5.25 5.25v-12.571q0-0.929 0.679-1.607t1.607-0.679h2.286q0.929 0 1.607 0.679t0.679 1.607v12.571l5.25-5.25q0.661-0.661 1.607-0.661 0.929 0 1.625 0.661l1.339 1.339q0.661 0.696 0.661 1.625z"></path>
+        </symbol>
+        <symbol id="icon-eye" viewBox="0 0 32 32">
+        <title>eye</title>
+        <path class="path1" d="M29.714 17.143q-2.714-4.214-6.804-6.304 1.089 1.857 1.089 4.018 0 3.304-2.348 5.652t-5.652 2.348-5.652-2.348-2.348-5.652q0-2.161 1.089-4.018-4.089 2.089-6.804 6.304 2.375 3.661 5.955 5.83t7.759 2.17 7.759-2.17 5.955-5.83zM16.857 10.286q0-0.357-0.25-0.607t-0.607-0.25q-2.232 0-3.83 1.598t-1.598 3.83q0 0.357 0.25 0.607t0.607 0.25 0.607-0.25 0.25-0.607q0-1.536 1.089-2.625t2.625-1.089q0.357 0 0.607-0.25t0.25-0.607zM32 17.143q0 0.607-0.357 1.232-2.5 4.107-6.723 6.58t-8.92 2.473-8.92-2.482-6.723-6.571q-0.357-0.625-0.357-1.232t0.357-1.232q2.5-4.089 6.723-6.571t8.92-2.482 8.92 2.482 6.723 6.571q0.357 0.625 0.357 1.232z"></path>
+        </symbol>
+        <symbol id="icon-eye-slash" viewBox="0 0 32 32">
+        <title>eye-slash</title>
+        <path class="path1" d="M9.911 23.839l1.393-2.518q-1.554-1.125-2.429-2.839t-0.875-3.625q0-2.161 1.089-4.018-4.089 2.089-6.804 6.304 2.982 4.607 7.625 6.696zM16.857 10.286q0-0.357-0.25-0.607t-0.607-0.25q-2.232 0-3.83 1.598t-1.598 3.83q0 0.357 0.25 0.607t0.607 0.25 0.607-0.25 0.25-0.607q0-1.536 1.089-2.625t2.625-1.089q0.357 0 0.607-0.25t0.25-0.607zM23.339 6.875q0 0.125-0.018 0.161-1.875 3.357-5.625 10.107t-5.643 10.125l-0.875 1.589q-0.179 0.286-0.5 0.286-0.214 0-2.393-1.25-0.286-0.179-0.286-0.5 0-0.214 0.786-1.554-2.554-1.161-4.705-3.089t-3.723-4.375q-0.357-0.554-0.357-1.232t0.357-1.232q2.732-4.196 6.786-6.625t8.857-2.429q1.589 0 3.214 0.304l0.964-1.732q0.179-0.286 0.5-0.286 0.089 0 0.321 0.107t0.554 0.277 0.589 0.33 0.563 0.33 0.348 0.205q0.286 0.179 0.286 0.482zM24 14.857q0 2.482-1.411 4.527t-3.732 2.938l5-8.964q0.143 0.804 0.143 1.5zM32 17.143q0 0.625-0.357 1.232-0.696 1.143-1.946 2.589-2.679 3.071-6.205 4.768t-7.491 1.696l1.321-2.357q3.786-0.321 7.009-2.446t5.384-5.482q-2.054-3.196-5.036-5.25l1.125-2q1.696 1.143 3.259 2.732t2.58 3.286q0.357 0.607 0.357 1.232z"></path>
+        </symbol>
+        <symbol id="icon-clipboard" viewBox="0 0 32 32">
+        <title>clipboard</title>
+        <path class="path1" d="M13.714 29.714h16v-11.429h-7.429q-0.714 0-1.214-0.5t-0.5-1.214v-7.429h-6.857v20.571zM18.286 4v-1.143q0-0.232-0.17-0.402t-0.402-0.17h-12.571q-0.232 0-0.402 0.17t-0.17 0.402v1.143q0 0.232 0.17 0.402t0.402 0.17h12.571q0.232 0 0.402-0.17t0.17-0.402zM22.857 16h5.339l-5.339-5.339v5.339zM32 18.286v12q0 0.714-0.5 1.214t-1.214 0.5h-17.143q-0.714 0-1.214-0.5t-0.5-1.214v-2.857h-9.714q-0.714 0-1.214-0.5t-0.5-1.214v-24q0-0.714 0.5-1.214t1.214-0.5h19.429q0.714 0 1.214 0.5t0.5 1.214v5.857q0.375 0.232 0.643 0.5l7.286 7.286q0.5 0.5 0.857 1.357t0.357 1.571z"></path>
+        </symbol>
+        <symbol id="icon-file-text-o" viewBox="0 0 27 32">
+        <title>file-text-o</title>
+        <path class="path1" d="M26.214 6.786q0.5 0.5 0.857 1.357t0.357 1.571v20.571q0 0.714-0.5 1.214t-1.214 0.5h-24q-0.714 0-1.214-0.5t-0.5-1.214v-28.571q0-0.714 0.5-1.214t1.214-0.5h16q0.714 0 1.571 0.357t1.357 0.857zM18.286 2.429v6.714h6.714q-0.179-0.518-0.393-0.732l-5.589-5.589q-0.214-0.214-0.732-0.393zM25.143 29.714v-18.286h-7.429q-0.714 0-1.214-0.5t-0.5-1.214v-7.429h-13.714v27.429h22.857zM6.857 14.286q0-0.25 0.161-0.411t0.411-0.161h12.571q0.25 0 0.411 0.161t0.161 0.411v1.143q0 0.25-0.161 0.411t-0.411 0.161h-12.571q-0.25 0-0.411-0.161t-0.161-0.411v-1.143zM20 18.286q0.25 0 0.411 0.161t0.161 0.411v1.143q0 0.25-0.161 0.411t-0.411 0.161h-12.571q-0.25 0-0.411-0.161t-0.161-0.411v-1.143q0-0.25 0.161-0.411t0.411-0.161h12.571zM20 22.857q0.25 0 0.411 0.161t0.161 0.411v1.143q0 0.25-0.161 0.411t-0.411 0.161h-12.571q-0.25 0-0.411-0.161t-0.161-0.411v-1.143q0-0.25 0.161-0.411t0.411-0.161h12.571z"></path>
+        </symbol>
+        <symbol id="icon-mail-reply" viewBox="0 0 32 32">
+        <title>mail-reply</title>
+        <path class="path1" d="M32 20q0 2.964-2.268 8.054-0.054 0.125-0.188 0.429t-0.241 0.536-0.232 0.393q-0.214 0.304-0.5 0.304-0.268 0-0.42-0.179t-0.152-0.446q0-0.161 0.045-0.473t0.045-0.42q0.089-1.214 0.089-2.196 0-1.804-0.313-3.232t-0.866-2.473-1.429-1.804-1.884-1.241-2.375-0.759-2.75-0.384-3.134-0.107h-4v4.571q0 0.464-0.339 0.804t-0.804 0.339-0.804-0.339l-9.143-9.143q-0.339-0.339-0.339-0.804t0.339-0.804l9.143-9.143q0.339-0.339 0.804-0.339t0.804 0.339 0.339 0.804v4.571h4q12.732 0 15.625 7.196 0.946 2.393 0.946 5.946z"></path>
+        </symbol>
+        </defs>
+    </svg>
+    
+    <header>
+        <section class="container">
+            <a class="navigation-title" href="./">
+                <h1 class="title">Linked.PM</h1>
+            </a>
+            
+            <a href="" id="howIt" class="button button-small button-outline">How does it work?</a>
+        </section>
+    </header>
+    
+
+    <section class="container form">
+        <form autocomplete="off">
+            <textarea placeholder="Enter your Private Message (max 300 characters) or paste a link" id="input" maxlength="300" autocomplete="off"></textarea>
+
+            <div class="row hideablePassword" id="password">
+                <div class="column column-100">
+                    <div class="passwordholder">
+                        <input type="text" placeholder="Enter password (min 5 characters)" id="passField" value="" autocomplete="disabled">
+                    </div>
+                    <div class="eyeholder">
+                        <a class=""><svg class="icon icon-eye-slash"><use xlink:href="#icon-eye-slash"></use></svg></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">            
+                <div class="column column-33 withEncryptBtn">
+                    <button class="button-primary" id="generate" disabled="disabled"><svg class="icon icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg>&nbsp;&nbsp;<span class="name">encrypt</span></button>
+                </div>
+                <div class="column column-66 withInfo">
+                    <span class="info">It works in your web browser, nothing is sent to the server.</span>
+                </div>
+                <div class="column"></div><div class="column"></div>
+            </div>
+        </form>
+    </section>
+    <section class="container result">
+        <div class="row" id="result">
+            <div class="column right">
+                <form autocomplete="off">
+                    <textarea id="output" readonly></textarea>
+                </form>
+                
+                <div class="row" id="linkButtons">
+                    <div class="column">
+                        <button class="button button-outline" data-clipboard-target="#output" id="toClipboard" disabled="disabled">
+                            <svg class="icon icon-clipboard"><use xlink:href="#icon-clipboard"></use></svg>&nbsp;&nbsp;Copy to clipboard
+                        </button>
+                    </div>
+                    <div class="column">
+                        <a class="button button-outline" href="" id="download" disabled="disabled">
+                            <svg class="icon icon-qrcode"><use xlink:href="#icon-qrcode"></use></svg>&nbsp;&nbsp;QR Code
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    
+                    <div class="column">
+                        <button class="button button-outline" id="reply" disabled="disabled">
+                            <svg class="icon icon-mail-reply"><use xlink:href="#icon-mail-reply"></use></svg>&nbsp;&nbsp;Reply with the same password
+                        </button>
+                    </div>
+                    <div class="column">
+                        <a class="button button-outline" href="" id="newMessage">
+                            <svg class="icon icon-file-text-o"><use xlink:href="#icon-file-text-o"></use></svg>&nbsp;&nbsp;New Private Message
+                        </a>
+                    </div>
+            
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+	<section>
+	<div id="footer">Try also: <b><a href="https://privmx.com">PrivMX - alternative, encrypted mail and shared notes</a></b></div>
+	</section>
+    
+    <div id="qrcode"></div>
+    <canvas width="330" height="330" id="canvas"></canvas>
+    <div id="pageDescription">
+        <p>Linked.PM is a small web app which turns your PMs into a clickable, encrypted links. You can send such "linked" PMs through unencrypted channels (email, sms, facebook etc) or paste them in documents. Just set a shared secret (password) with your friends.</p>
+    </div>
+    
+    <!-- build:js -->
+    <script type='text/javascript' src='index.js'></script>
+    <!-- endbuild -->
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "linkedpm",
+  "description": "A single-file browser-based application which turns your private messages into clickable, encrypted links.",
+  "keywords": [
+    "secret key cryptography",
+    "text encryption",
+    "cryptography"
+  ],
+  "version": "1.0.0",
+  "homepage": "https://linked.pm",
+  "license": "MIT",
+  "dependencies": {
+    "alertify.js": "^1.0.12",
+    "autosize": "^3.0.17",
+    "clipboard": "^1.5.12",
+    "downloadjs": "^1.4.6",
+    "jquery": "^3.1.0",
+    "qrcode-js-package": "^1.0.4",
+    "sjcl": "=1.0.3"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-copy": "0.0.2",
+    "gulp-css-url-adjuster": "^0.2.3",
+    "gulp-html-replace": "^1.6.1",
+    "gulp-if": "^2.0.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
+    "yargs": "^4.8.1"
+  }
+}
