@@ -1,9 +1,7 @@
 var gulp = require('gulp'),
-    browserify = require('gulp-browserify'),
     watch = require('gulp-watch'),
     bower = require('gulp-bower'),
     concat = require('gulp-concat'),
-    urlAdjuster = require('gulp-css-url-adjuster'),
     cleanCSS = require('gulp-clean-css'),
     clean = require('gulp-clean'),
     copy = require('gulp-copy'),
@@ -11,7 +9,11 @@ var gulp = require('gulp'),
     gulpif = require('gulp-if'),
     uglify = require('gulp-uglify'),
     connect = require('gulp-connect'),
-    htmlreplace = require('gulp-html-replace');
+    htmlreplace = require('gulp-html-replace'),
+    browserify = require('browserify'),
+    collapse = require('bundle-collapser/plugin'),
+    source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer');
 
 var config = {
     bowerDir: './bower_components',
@@ -77,6 +79,13 @@ gulp.task('webserver', ['default', 'watch'],  function() {
 });
 
 gulp.task('html', ['bower'], function(){
+
+    var b = browserify({
+        entries: 'src/js/index.js',
+        debug : !config.minify,
+        builtins: {}
+    }).plugin(collapse);
+
     return gulp.src('src/html/index.html')
     .pipe(htmlreplace({
         'css': {
@@ -91,11 +100,9 @@ gulp.task('html', ['bower'], function(){
             tpl: "<style>%s</style>"
         },
         'js': {
-            src: gulp.src('src/js/index.js')
-                .pipe(browserify({
-                  insertGlobals : true,
-                  debug : !config.minify
-                }))
+            src: b.bundle()
+                .pipe(source('src/js/index.js'))
+                .pipe(buffer())
                 .pipe(gulpif(config.minify, uglify())),
             tpl: "<script>%s</script>"
         }
